@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vote: Mani vs Preethi</title>
+  <style>
+    body { font-family: Arial, sans-serif; text-align: center; background-color: #f0f0f0; }
+    .container { margin-top: 50px; background: white; padding: 20px; display: inline-block; border-radius: 10px; }
+    button { margin: 10px; padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 8px; }
+    .results { margin-top: 20px; font-size: 20px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🗳️ Who gets your vote?</h1>
+    <button onclick="vote('mani')">Vote for Mani</button>
+    <button onclick="vote('preethi')">Vote for Preethi</button>
+    <div class="results" id="results">Votes: Mani - 0 | Preethi - 0</div>
+  </div>
+
+  <script>
+    let votes = { mani: 0, preethi: 0 };
+
+    function vote(candidate) {
+      votes[candidate]++;
+      document.getElementById('results').innerText = `Votes: Mani - ${votes.mani} | Preethi - ${votes.preethi}`;
+    }
+  </script>
+</body>
+</html>
